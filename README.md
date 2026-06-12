@@ -40,19 +40,22 @@ This project uses the **Fake and Real News Dataset**.
 
 ### 1. sml_nlp_baselines.ipynb
 
-A classical NLP pipeline was developed for fake news detection using TF-IDF feature extraction and traditional machine learning classifiers. News articles were represented as weighted word vectors and used to train **Logistic Regression**, **Naive Bayes**, and **Support Vector Machine (SVM)** classifiers for binary classification. These baseline models established a performance benchmark for subsequent transformer-based and multimodal approaches.
+A classical NLP pipeline was developed for fake news detection using TF-IDF feature extraction and traditional machine learning classifiers. The news text was converted into numerical features. TF-IDF assigned higher importance to commonly occuring words and lower to others.
+News articles were represented as weighted word vectors and used to train **Logistic Regression**, **Naive Bayes**, and **Support Vector Machine (SVM)** classifiers for binary classification. THese models were evaluated and results served as the baseline performance benchmark 
 
 ---
 
 ### 2. cv_multimodal_fusion.ipynb
 
-This notebook explored the computer vision and multimodal aspects of fake news detection. Visual features were extracted from images using a pretrained **ResNet50** model through transfer learning, producing high-dimensional image embeddings that capture semantic visual information. These image representations were then combined with textual feature representations to investigate multimodal learning through feature-level fusion. A neural network-based fusion architecture was designed to merge information from both modalities, demonstrating how textual and visual cues can be jointly utilized for misinformation detection.
+This notebook explored the computer vision and multimodal aspects of fake news detection. Visual features were extracted from images using a pretrained **ResNet50** model through transfer learning, producing high-dimensional image embeddings that capture semantic visual information. 
+These image representations were then combined with textual feature representations to investigate multimodal learning through feature-level fusion. 
+A neural network-based fusion architecture was designed to merge information from both modalities, demonstrating how textual and visual cues can be jointly utilized for misinformation detection.
 
 ---
 
 ### 3. bert_integration.ipynb
 
-This notebook focused on transformer-based natural language processing using **BERT (Bidirectional Encoder Representations from Transformers)**. News articles were tokenized and converted into contextual embeddings using a pretrained BERT model, enabling semantic information and contextual word relationships to be captured more effectively than traditional TF-IDF representations. The extracted CLS embeddings were used as feature vectors for downstream classification using Logistic Regression. The approach was evaluated on a subset of the fake news dataset and compared against classical NLP baselines to analyze the benefits of contextual language representations.
+This notebook focused on transformer-based natural language processing using **BERT (Bidirectional Encoder Representations from Transformers)**. News articles were tokenized and converted into contextual embeddings using a pretrained BERT model which also grasps contextual meaning of words unlike TF-IDF representation. The extracted CLS embeddings were used as feature vectors for downstream classification using Logistic Regression. The approach was evaluated on a subset of the fake news dataset and compared against classical NLP baselines to analyze the benefits of contextual language representations.
 
 ---
 
