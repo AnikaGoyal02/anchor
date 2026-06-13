@@ -59,6 +59,18 @@ This notebook focused on transformer-based natural language processing using **B
 
 ---
 
+### 4. experiments_and_metrics.ipynb
+
+This notebook shows experimental evaluation and comparison of all developed models. Performance of the classical NLP approaches (TF-IDF + Logistic Regression, Naive Bayes, and SVM) was compared with the BERT-based approach using standard classification metrics including Accuracy, Precision, Recall, F1-Score, and Confusion Matrices.
+
+---
+
+### 5. model_explainability.ipynb
+
+This notebook focused on improving model interpretability using SHAP (SHapley Additive exPlanations). For a feature x_i shap computes average contribution of x_i across all possible feature combinations (A, AB, ABC ...). These are used for quantifying the contribution of each textual feature to the final classification decision. Local explanations were generated to understand why specific articles were classified as fake or real, while global feature importance analysis identified the most influential words affecting model predictions. This enhanced transparency and trustworthiness of the fake news detection pipeline.
+
+---
+
 ## Experimental Evaluation
 
 The different approaches were compared using standard classification metrics:
@@ -91,7 +103,6 @@ The experiments provided insights into the trade-offs between traditional machin
 
 Planned extensions include:
 
-* Explainability using SHAP
 * Explainability using LIME
 * Confidence Calibration
 * Uncertainty Estimation
