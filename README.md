@@ -2,7 +2,20 @@
 
 ## Overview
 
-This project explores fake news detection using multiple machine learning and deep learning approaches. The project was implemented in a phased manner to understand the strengths and limitations of different textual and visual representations for misinformation detection.
+Fake news and online misinformation have become major challenges in the digital age. This project investigates multiple machine learning and deep learning approaches for fake news detection, progressing from classical Natural Language Processing (NLP) techniques to transformer-based language models and multimodal learning architectures.
+
+The project combines textual and visual information to classify news articles as Fake or Real while also improving model interpretability through Explainable AI (XAI) techniques.
+
+The implementation was carried out in multiple phases:
+
+- Classical NLP Baselines using TF-IDF and Machine Learning
+- Computer Vision based Feature Extraction using ResNet50
+- BERT-based Contextual Language Representations
+- Experimental Evaluation and Model Comparison
+- Explainability using SHAP
+- Attention Based Multimodal Fusion using BERT and ResNet50
+
+The final system demonstrates how textual and visual information can be jointly leveraged for fake news detection through attention-guided multimodal learning.
 
 ### Workflow
 
@@ -71,6 +84,20 @@ This notebook focused on improving model interpretability using SHAP (SHapley Ad
 
 ---
 
+### 6. attention_multimodal_fusion.ipynb
+
+This notebook extends the multimodal fake news detection pipeline through an attention-based fusion architecture using the Fakeddit dataset. Unlike the earlier multimodal approach which relied on direct feature concatenation, this introduces an attention mechanism to determine the relative importance of textual and visual information during classification.
+
+Textual features were extracted using a pretrained BERT Base Uncased model, where each news title was represented using its contextual CLS embedding. Visual features were extracted from associated news images using a pretrained ResNet50 model, producing high-dimensional image embeddings that capture semantic visual content.
+
+The extracted text and image representations were projected into a common feature space and combined through an attention layer. The attention mechanism learned modality-specific weights for text and image features, allowing the model to adaptively emphasize the most informative modality for each news sample. The weighted multimodal representation was then passed through a neural network classifier to predict whether the news item was fake or real.
+
+It also includes data preprocessing, image downloading and validation, feature standardization, model training, performance evaluation using Accuracy, Precision, Recall, F1-Score and Confusion Matrix analysis, along with inspection and visualization of learned attention weights. This experiment demonstrates how attention-guided multimodal learning can be used to combine textual and visual evidence for fake news detection.
+
+Summarising above, this notebook demonstrates how attention mechanisms can be used to effectively combine textual and visual information for multimodal fake news detection.
+
+---
+
 ## Experimental Evaluation
 
 The different approaches were compared using standard classification metrics:
@@ -96,17 +123,9 @@ The experiments provided insights into the trade-offs between traditional machin
 * HuggingFace Transformers
 * Matplotlib
 * Seaborn
-
----
-
-## Future Work
-
-Planned extensions include:
-
-* Explainability using LIME
-* Confidence Calibration
-* Uncertainty Estimation
-* Advanced Multimodal Fusion Techniques
-* End-to-End Multimodal Training
+* Fake and Real News Dataset
+* Fakeddit Dataset
+* SHAP
+* ResNet 50
 
 ---
